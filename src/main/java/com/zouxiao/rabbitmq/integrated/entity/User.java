@@ -3,6 +3,7 @@ package com.zouxiao.rabbitmq.integrated.entity;
 import lombok.Data;
 
 import java.io.Serializable;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 /**
@@ -22,4 +23,15 @@ public class User implements Serializable {
     private Date bir;
 
     private Integer order;
+
+    @Override
+    public String toString() {
+        SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
+        return "User{" +
+                "name='" + name + '\'' +
+                ", age='" + age + '\'' +
+                ", bir=" + format.format(bir) +
+                ", order=" + order +
+                '}';
+    }
 }
